@@ -3,6 +3,7 @@ package com.example.pr118gryzlov;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
@@ -13,6 +14,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton firstBtn;
+    String result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +23,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        result = String.valueOf(event.getKeyCode() - 7);
+        Toast.makeText(this, "Вы попали " + result, Toast.LENGTH_SHORT).show();
+        return super.dispatchKeyEvent(event);
+    }
+
     public void checkClick(View v){
-        String result = "";
+
         switch (v.getId()){
             case R.id.imageButton3:
                 result = "1";
@@ -40,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
                 result = "5";
                 break;
         }
-        Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+
+
     }
 
 }
