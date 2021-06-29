@@ -13,7 +13,6 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton firstBtn;
     String result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
