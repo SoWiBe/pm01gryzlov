@@ -27,12 +27,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         result = String.valueOf(event.getKeyCode() - 7);
-        Toast.makeText(this, "Вы попали " + result, Toast.LENGTH_SHORT).show();
+        if(event.getKeyCode() - 7 < 6){
+            Toast.makeText(this, "Вы попали " + result, Toast.LENGTH_SHORT).show();
+        }
+
         return super.dispatchKeyEvent(event);
     }
 
     public void checkClick(View v){
-
         switch (v.getId()){
             case R.id.imageButton3:
                 result = "1";
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 result = "5";
                 break;
         }
-
+        Toast.makeText(this, "Вы попали " + result, Toast.LENGTH_SHORT).show();
 
     }
 
