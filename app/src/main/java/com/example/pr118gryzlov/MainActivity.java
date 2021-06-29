@@ -18,18 +18,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
     }
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
+
         result = String.valueOf(event.getKeyCode() - 7);
         if(event.getKeyCode() - 7 < 6){
             Toast.makeText(this, "Вы попали " + result, Toast.LENGTH_SHORT).show();
         }
-
         return super.dispatchKeyEvent(event);
     }
 
